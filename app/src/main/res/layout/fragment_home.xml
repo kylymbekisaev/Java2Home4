@@ -1,0 +1,79 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/qs"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingHorizontal="20dp"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/iv_menu"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center|start"
+                android:src="@drawable/menu"/>
+
+            <ImageView
+                android:id="@+id/iv_shape"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center|end"
+                android:src="@drawable/shape_2_"/>
+
+            <TextView
+                android:id="@+id/tv_Zametki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Заметки"
+                android:textColor="@color/fff"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/et_num"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingHorizontal="10dp"
+            android:drawableStart="@drawable/shape_3_"
+            android:hint="Поиск заметок"
+            android:drawablePadding="10dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/et_raunder"
+            android:textColorHint="@color/eee"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_notes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            tools:listitem="@layout/not_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mv_button"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:text="@string/plus"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@color/orange" />
+
+</FrameLayout>
